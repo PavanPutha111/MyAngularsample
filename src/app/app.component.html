@@ -1,11 +1,14 @@
-<app-top-bar></app-top-bar>
+<h1>This is TODO List App!</h1>
 
-<div class="container">
-  <router-outlet></router-outlet>
+<h3>Parent Component</h3>
+
+<div>
+  <p>Name : <input #name type="text" /></p>
+  <p>Marks : <input #marks type="text" /></p>
 </div>
 
-<!-- 
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
--->
+<button (click)="getData(name.value, marks.value)" style="margin-left:10px;">
+  Submit
+</button>
+
+<app-child [childName]="objData.name" [childMarks]="objData.marks"></app-child>

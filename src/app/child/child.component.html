@@ -1,0 +1,14 @@
+<p>child works!</p>
+
+<p>The child Name is - {{ childName }} and marks are - {{ childMarks }}</p>
+
+<table class="table">
+  <thead>
+    <th>Name</th>
+    <th>Marks</th>
+  </thead>
+  <tbody *ngFor="let list of dataList">
+    <td>{{ list.name }}</td>
+    <td>{{ list.marks }}</td>
+  </tbody>
+</table>
