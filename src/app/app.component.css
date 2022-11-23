@@ -1,6 +1,26 @@
-h1{
+h1 {
   text-align: center;
   padding: 10px;
   background-color: aquamarine;
   color: rgb(190, 55, 55);
+}
+
+h2 {
+  text-align: center;
+  justify-content: space-between;
+  padding: 10px;
+  color: antiquewhite;
+}
+
+#link{
+  background-color: rgb(151, 108, 190);
+  color: rgb(60, 114, 78);
+
+}
+
+
+#mainpage{
+
+  text-align: center;
+
 }

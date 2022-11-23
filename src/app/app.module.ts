@@ -1,22 +1,41 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { AppComponent } from './app.component';
 import { ChildComponent } from './child/child.component';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './about/about.component';
+import { EmployeeComponent } from './employee/employee.component';
+import { EmpaddComponent } from './empadd/empadd.component';
+import { EmplistComponent } from './emplist/emplist.component';
 
+
+
+const routes: Routes = [
+  {path:"", component:HomeComponent},
+  {path:"about",component:AboutComponent},
+  {path:"employee",component:EmplistComponent}
+]
 
 @NgModule({
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    RouterModule.forRoot([
-    ])
+    RouterModule.forRoot(routes),
+    HttpClientModule
   ],
   declarations: [
     AppComponent,
-    ChildComponent
+    ChildComponent,
+    HomeComponent,
+    AboutComponent,
+    EmployeeComponent,
+    EmpaddComponent,
+    EmplistComponent,
   ],
   bootstrap: [
     AppComponent
