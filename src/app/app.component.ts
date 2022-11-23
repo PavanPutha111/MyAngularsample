@@ -1,5 +1,7 @@
 import { Component, ViewChild, AfterViewInit} from '@angular/core';
 import { ChildComponent } from './child/child.component';
+import { MasterService } from './service/master.service';
+
 
 @Component({
   selector: 'app-root',
@@ -11,6 +13,13 @@ export class AppComponent implements AfterViewInit {
   inputmakrs = '';
 
 @ViewChild( ChildComponent ) childPush !: ChildComponent; 
+
+dataList:any;
+
+constructor(private service:MasterService){
+this.service.getEmplist().subscribe((result:any) =>  { this.dataList = result });
+
+}
 
 ngAfterViewInit(){
   

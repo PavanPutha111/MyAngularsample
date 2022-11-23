@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MasterService } from '../service/master.service';
 
 @Component({
   selector: 'app-employee',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./employee.component.css']
 })
 export class EmployeeComponent {
+
+  dataList:any;
+
+  constructor(private service:MasterService){
+    this.service.getEmplist().subscribe((result:any) =>  { this.dataList = result });
+    
+    }
+
 
 }

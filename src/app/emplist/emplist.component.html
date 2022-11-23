@@ -1,10 +1,14 @@
 <table class="table">
 <thead>
-<tr>ID</tr>
+<tr>postid</tr>
+<tr>id</tr>
+<tr>name</tr>
+<tr>email</tr>
+<tr>body</tr>
 </thead>
 <tbody>
   <tr *ngFor="let data of dataList">
-<td>{{ data.type }}</td>
+<td>{{ data.postid }}</td>
 </tr>
 </tbody>
 </table>

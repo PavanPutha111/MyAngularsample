@@ -1,1 +1,19 @@
-<p>employee works!</p>
+<table>
+  <thead>
+    <th>postid</th>
+    <th>name</th>
+    <th>email</th>
+    <th>Edit</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of dataList">
+      <td>{{ data.postId }}</td>
+      <td>{{ data.name }}</td>
+      <td>{{ data.email }}</td>
+      <button routerLink="Edit/{{ data.name }}">Edit</button>
+    </tr>
+  </tbody>
+</table>
+
+
+<router-outlet></router-outlet>

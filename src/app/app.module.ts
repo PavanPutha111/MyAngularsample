@@ -18,7 +18,7 @@ import { EmplistComponent } from './emplist/emplist.component';
 const routes: Routes = [
   {path:"", component:HomeComponent},
   {path:"about",component:AboutComponent},
-  {path:"employee",component:EmplistComponent}
+  {path:"employee",component:EmployeeComponent,children:[{path:"Edit/:name",component:EmpaddComponent}]},
 ]
 
 @NgModule({

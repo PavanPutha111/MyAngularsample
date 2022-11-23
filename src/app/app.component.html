@@ -3,16 +3,19 @@
 <div id="mainpage">
 <h3>Parent Component</h3>
 
-<div id="link" style="display:inline-flex">
+
+
+ <div id="link" style="display:inline-flex">
   <a> <h2 routerLink="">HOME</h2> </a>
   <a> <h2 routerLink="about" >ABOUT</h2> </a>
   <a> <h2 routerLink="employee" >EMPLOYEE</h2> </a>
 </div>
 
 
-<router-outlet></router-outlet>
 
-<div>
+<router-outlet></router-outlet> 
+
+<!-- <div>
   <p>Name : <input #name type="text" /></p>
   <p>Marks : <input #marks type="text" /></p>
 </div>
@@ -22,7 +25,7 @@
   style="margin-left:10px;"
 >
   Submit
-</button>
+</button> -->
 
 <!-- <app-child [childName]="objData.name" [childMarks]="objData.marks"></app-child> -->
 

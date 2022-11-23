@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class MasterService {
-  apiurl = 'https://official-joke-api.appspot.com/random_joke';
+  apiurl = 'https://jsonplaceholder.typicode.com/posts/1/comments';
 
   constructor(private http: HttpClient) {}
 
