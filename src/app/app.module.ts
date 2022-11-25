@@ -3,7 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
+import { AdminModule } from './admin/admin.module';
+import { AuthGuard } from './guard/auth.guard';
 
 import { AppComponent } from './app.component';
 import { ChildComponent } from './child/child.component';
@@ -12,21 +13,27 @@ import { AboutComponent } from './about/about.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { EmpaddComponent } from './empadd/empadd.component';
 import { EmplistComponent } from './emplist/emplist.component';
-
-
+import { LoginpageComponent } from './loginpage/loginpage.component';
 
 const routes: Routes = [
-  {path:"", component:HomeComponent},
-  {path:"about",component:AboutComponent},
-  {path:"employee",component:EmployeeComponent,children:[{path:"Edit/:name",component:EmpaddComponent}]},
-]
+  { path: '', component: HomeComponent, canActivate:[AuthGuard] },
+  { path: 'about', component: AboutComponent,  canActivate:[AuthGuard]},
+  {
+    path: 'employee',
+    component: EmployeeComponent,
+    children: [{ path: 'Edit/:name', component: EmpaddComponent }],canActivate:[AuthGuard]
+  },
+  {component:LoginpageComponent,path:'loginpage'},
+  { component: AboutComponent, path:"**" }
+];
 
 @NgModule({
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
-    HttpClientModule
+    HttpClientModule,
+    AdminModule
   ],
   declarations: [
     AppComponent,
@@ -36,13 +43,11 @@ const routes: Routes = [
     EmployeeComponent,
     EmpaddComponent,
     EmplistComponent,
+    LoginpageComponent,
   ],
-  bootstrap: [
-    AppComponent
-  ]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
-
+export class AppModule {}
 
 /*
 Copyright Google LLC. All Rights Reserved.
