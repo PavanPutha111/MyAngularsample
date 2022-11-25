@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { LoginpageComponent } from '../loginpage/loginpage.component';
 
 @Injectable({
   providedIn: 'root',
@@ -8,10 +7,10 @@ import { LoginpageComponent } from '../loginpage/loginpage.component';
 export class MasterService {
   apiurl = 'https://jsonplaceholder.typicode.com/posts/1/comments';
 
-  constructor(private http: HttpClient, private login: LoginpageComponent) {}
+  constructor(private http: HttpClient) {}
 
   isLogin() {
-    return localStorage.getItem('userdata')!=null;
+    return localStorage.getItem('username') != null;
   }
 
   getEmplist() {

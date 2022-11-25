@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-loginpage',
@@ -8,11 +7,8 @@ import { Router } from '@angular/router';
 })
 export class LoginpageComponent {
 
-  constructor(private router: Router){}
-
-  getOnClick(name:any){
-    localStorage.setItem('userdata',name);
-    this.router.navigate([""]);
-  }
+proceedlogin(name:any){
+ return localStorage.setItem('username',name);
+}
 
 }

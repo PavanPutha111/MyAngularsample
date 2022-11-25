@@ -4,26 +4,25 @@ import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminModule } from './admin/admin.module';
-import { AuthGuard } from './guard/auth.guard';
+import {  AuthGuard } from './guard/auth.guard';
 
 import { AppComponent } from './app.component';
 import { ChildComponent } from './child/child.component';
-import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { EmpaddComponent } from './empadd/empadd.component';
 import { EmplistComponent } from './emplist/emplist.component';
 import { LoginpageComponent } from './loginpage/loginpage.component';
 
+
 const routes: Routes = [
-  { path: '', component: HomeComponent, canActivate:[AuthGuard] },
-  { path: 'about', component: AboutComponent,  canActivate:[AuthGuard]},
+  {path:'loginpage',component:LoginpageComponent},
+  { path: 'about', component: AboutComponent,canActivate:[AuthGuard]},
   {
     path: 'employee',
     component: EmployeeComponent,
     children: [{ path: 'Edit/:name', component: EmpaddComponent }],canActivate:[AuthGuard]
   },
-  {component:LoginpageComponent,path:'loginpage'},
   { component: AboutComponent, path:"**" }
 ];
 
@@ -38,7 +37,6 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     ChildComponent,
-    HomeComponent,
     AboutComponent,
     EmployeeComponent,
     EmpaddComponent,
